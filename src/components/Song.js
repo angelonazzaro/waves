@@ -1,11 +1,11 @@
 
 
-function Song() {
+function Song({currentSong, setCurrentSong}) {
     return (
        <div className="song-container">
-           <h1>LOL</h1>
-           <h1>LOL</h1>
-           <h1>LOL</h1>
+           <img src={currentSong.cover} alt="cover" />
+           <h2>{currentSong.name}</h2>
+           <h3>{currentSong.artist}</h3>
        </div>
     );
 }
