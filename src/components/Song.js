@@ -2,8 +2,10 @@
 
 function Song() {
     return (
-       <div>
-         <h1>LOL</h1>
+       <div className="song-container">
+           <h1>LOL</h1>
+           <h1>LOL</h1>
+           <h1>LOL</h1>
        </div>
     );
 }
