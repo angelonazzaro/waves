@@ -6,11 +6,13 @@
     box-shadow: 2px 2px 30px rgb(204, 204, 204);
     transform: translateX(-100%);
     opacity: 0;
+    background-color: white;
     transition: all 200ms ease;
     overflow-y: scroll;
+    z-index: 10;
 
     h2 {
-        padding: 1rem 2rem 1rem 2rem;
+        padding: 2rem 2rem 3rem 2rem;
     }
 
     .library-songs {
@@ -78,4 +80,10 @@
     background-color: rgba(155, 155, 155, 0.5);
     border-radius: 20px;
     border: transparent;
+}
+
+@media screen and (max-width: 768px) {
+    .library {
+        width: 100%;
+    }
 }

@@ -23,11 +23,14 @@ function App() {
   return (
     <div>
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+
       <Song currentSong={currentSong} setCurrentSong={setCurrentSong}/>
+
       <Player currentSong={currentSong} audioRef={audioRef} setCurrentSong={setCurrentSong} 
-        songs={songs} setSongs={setSongs} isSongPlaying={isSongPlaying} setIsSongPlaying={setIsSongPlaying}/>
-        <Library libraryStatus={libraryStatus} songs={songs} setSongs={setSongs} setCurrentSong={setCurrentSong} 
-          isSongPlaying={isSongPlaying} audioRef={audioRef} />
+        songs={songs} setSongs={setSongs} isSongPlaying={isSongPlaying} setIsSongPlaying={setIsSongPlaying} />
+
+      <Library libraryStatus={libraryStatus} songs={songs} setSongs={setSongs} setCurrentSong={setCurrentSong} 
+        isSongPlaying={isSongPlaying} audioRef={audioRef} />
     </div>
   );
 }
