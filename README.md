@@ -30,7 +30,7 @@ In order to install and use Waves you'll have to:
 ### Install NodeJS on your machine
 There are different ways to install `NodeJS`, but the simplest way is to navigate to the official [site](https://nodejs.org/en/) and download the LTS version. 
 
-<img width="1512" alt="Screenshot 2022-12-24 alle 14 41 13" src="https://user-images.githubusercontent.com/58223071/209438525-3632e5d7-2273-4ef7-84dd-c330e4d9f10c.png">
+<img width="1512" alt="Screenshot 2022-12-24 alle 14 41 13" src="https://user-images.githubusercontent.com/58223071/209438525-3632e5d7-2273-4ef7-84dd-c330e4d9f10c.png" />
 
 Once you have downloaded and installed NodeJS you can check if the installation was successful by running `node -v` in your terminal. If NodeJS has been successfully installed on your machine you should see something like this: 
 
@@ -38,15 +38,15 @@ Once you have downloaded and installed NodeJS you can check if the installation 
 
 ### Clone this Repository
 In order to copy this repository you can go two ways. <br> 
-The first way is to click on the green button in the top right corner and go to `Download ZIP` and extract it on your machine. 
-
-<img width="913" alt="Screenshot 2022-12-24 alle 14 56 50" src="https://user-images.githubusercontent.com/58223071/209439016-de7f7ba9-b835-45f8-9b2e-4136a51f8ca3.png">
-
-<br>
-The other way is to use clone the repo via `git`. Open git bash or your terminal if you are on a Unix-based system and type: 
+The first way is to use clone the repo via `git`. Open git bash or your terminal if you are on a Unix-based system and type: 
 ```
 git clone https://github.com/sl1mSha4dey/waves.git
 ```
+<br />
+The other way is to click on the green button in the top right corner and go to <b>Download ZIP</b> and extract it on your machine. 
+
+<img width="913" alt="Screenshot 2022-12-24 alle 14 56 50" src="https://user-images.githubusercontent.com/58223071/209439016-de7f7ba9-b835-45f8-9b2e-4136a51f8ca3.png" />
+
 
 ### Start the application 
 Once you have the repository on your machine, navigate with your terminal to the folder where you have cloned or extracted it: 
