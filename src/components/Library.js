@@ -1,8 +1,8 @@
 import LibrarySong  from "./LibrarySong";
 
-function Library({songs, setSongs, setCurrentSong, isSongPlaying, audioRef}) {
+function Library({libraryStatus, songs, setSongs, setCurrentSong, isSongPlaying, audioRef}) {
     return(
-        <div className="library">
+        <div className={`library ${libraryStatus ? 'active-library' : ''}`}>
             <h2>Library</h2>
             <div className="library-songs">
                 {songs.map((song) => <LibrarySong key={song.id} song={song} 

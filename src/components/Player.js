@@ -65,7 +65,7 @@ function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongP
             <div className="time-control">
                 <p>{formatTime(currentSongInfo.currentTime)}</p>
                 <input type="range" min={0} max={currentSongInfo.duration || 0} 
-                    value={currentSongInfo.currentTime} onChange={dragHandler}/>
+                    value={currentSongInfo.currentTime} onChange={dragHandler} />
                 <p>{formatTime(currentSongInfo.duration)}</p>
             </div>
             <div className="play-control">
@@ -77,7 +77,7 @@ function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongP
                     size="2x" icon={faAngleRight} />
             </div>
             <audio onLoadedMetadata={timeUpdateHandler} onTimeUpdate={timeUpdateHandler} 
-                ref={audioRef} src={currentSong.audio}></audio>
+                onEnded={() => skipSong('forward')} ref={audioRef} src={currentSong.audio}></audio>
 		</div>
 	);
 }
