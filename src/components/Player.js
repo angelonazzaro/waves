@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPlay, faPause, faAngleLeft, faAngleRight, faVolumeLow, faVolumeXmark} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause, faAngleLeft, faAngleRight, faVolumeLow, faVolumeXmark } from '@fortawesome/free-solid-svg-icons';
 
 
 function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongPlaying, setIsSongPlaying}) {    
     // Get DOM element
     const audioElement = audioRef.current;
+
 
     // Event handlers
     const playSongHandler = () => {    
@@ -35,6 +36,15 @@ function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongP
         let index = await songs.findIndex((song) => song.id === currentSong.id);
         
         if (direction === 'back') {
+
+            // If the current song is playing or the track is not at the beginning, 
+            // we make the song start over
+            if (isSongPlaying || currentSongInfo.currentTime > 0) {
+                audioElement.currentTime = 0;
+                setCurrentSongInfo({...currentSongInfo, currentTime: 0, animationPercentage: 0});
+                return; 
+            }
+
             if ((index - 1) === -1)
                 index = songs.length - 1;
             else
