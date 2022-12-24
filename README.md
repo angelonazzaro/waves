@@ -1,5 +1,13 @@
 <div align="center">
     <h1>Waves</h1>
+    <br>
+    <p align="center">
+        <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge" />
+        <img src="https://img.shields.io/github/languages/top/sl1mSha4dey/waves?style=for-the-badge" />
+    </p>
+    <p align="center">
+        <img src="https://img.shields.io/github/contributors/sl1mSha4dey/waves?color=brightgreen&style=for-the-badge" />
+    </p>
 </div>
 
 # Introduction 
