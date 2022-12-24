@@ -74,7 +74,7 @@ If you would like to view the original implementation, you can find it [here](ht
 If you would like to contribute, please: <br>
  - Fork this repository: https://github.com/sl1mSha4dey/waves/fork 
  - Create your feature branch: `git checkout -b MY-NEW-FEATURE`
- - Commit your changes: `git commit -m 'Add my feature'
+ - Commit your changes: `git commit -m 'Add my feature'`
  - Push to the branch: `git push -u origin MY-NEW-FEATURE`
  - Submit a pull request to explain what you did
 
