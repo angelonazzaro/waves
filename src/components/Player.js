@@ -32,22 +32,22 @@ function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongP
     }
 
     const skipSong = async (direction) => {
-        let currentIndex = await songs.findIndex((song) => song.id === currentSong.id);
+        let index = await songs.findIndex((song) => song.id === currentSong.id);
         
         if (direction === 'back') {
-            if ((currentIndex - 1) === -1)
-                currentIndex = songs.length - 1;
+            if ((index - 1) === -1)
+                index = songs.length - 1;
             else
-                currentIndex--; 
+                index--; 
         } else {
-            currentIndex = (currentIndex + 1) % songs.length;
+            index = (index + 1) % songs.length;
         }
 
-        await setCurrentSong(songs[currentIndex]);
+        await setCurrentSong(songs[index]);
 
         if (isSongPlaying) audioRef.current.play();
         
-        const newSongs = songs.map((song) => {return {...song, active: song.id === currentSong.id}});
+        const newSongs = songs.map((song) => {return {...song, active: song.id === songs[index].id}});
         await setSongs(newSongs);
     }
 
