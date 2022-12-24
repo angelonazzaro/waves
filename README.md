@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+<div align="center">
+    <h1>Waves</h1>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Introduction 
+Waves is a web music player built with `React`. <br>
+You may have seen other repositories with similar name, code and structure since the original idea behind this project comes from [DevEd](https://www.youtube.com/@developedbyed)'s React Course. 
+<br>
+This is **my personal** implementation with some added features. 
 
-## Available Scripts
+## Demo 
 
-In the project directory, you can run:
 
-### `npm start`
+## How to Install
+In order to install and use Waves you'll have to:
+- Install `NodeJS` on your machine 
+- Clone this repository
+- Start the application 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Install NodeJS on your machine
+There are different ways to install `NodeJS`, but the simplest way is to navigate to the official [site](https://nodejs.org/en/) and download the LTS version. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Once you have downloaded and installed NodeJS you can check if the installation was successful by running `node -v` in your terminal. If NodeJS has been successfully installed on your machine you should see something like this: 
 
-### `npm test`
+### Clone this Repository
+In order to copy this repository you can go two ways. <br> 
+The first way is to click on the green button in the top right corner and go to `Download ZIP` and extract it on your machine. 
+<br>
+The other way is to use clone the repo via `git`. Open git bash or your terminal if you are on a Unix-based system and type: 
+```
+git clone https://github.com/sl1mSha4dey/waves.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Start the application 
+Once you have the repository on your machine, navigate with your terminal to the folder where you have cloned or extracted it: 
+```
+cd repository-folder
+```
+Once you are on the directory, by the `dir` or `ls` command you should get this output: 
 
-### `npm run build`
+Now proceed to install all the packages needed to run the project by running the following command: 
+```
+npm install 
+```
+Once the process has terminated, you can run the application by running: 
+```
+npm start
+```
+Your application will be available at https://localhost:3000. ENJOY!!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## References
+If you would like to view the original implementation, you can find it [here](https://github.com/developedbyed/music-player-react). 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
+If you would like to contribute, please: <br>
+ - Fork this repository: https://github.com/sl1mSha4dey/waves/fork 
+ - Create your feature branch: `git checkout -b MY-NEW-FEATURE`
+ - Commit your changes: `git commit -m 'Add my feature'
+ - Push to the branch: `git push -u origin MY-NEW-FEATURE`
+ - Submit a pull request to explain what you did
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ If you do not know how to code in React, but you have some idea that you'd like to add to the project, please open an issue where we can discuss it.
