@@ -36,9 +36,8 @@ function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongP
         let index = await songs.findIndex((song) => song.id === currentSong.id);
         
         if (direction === 'back') {
-            // If the current song is playing or the track is not at the beginning, 
-            // we make the song start over
-            if (isSongPlaying || currentSongInfo.currentTime > 0) {
+            // If the track is not at the beginning, we make the song start over
+            if (currentSongInfo.currentTime > 0) {
                 audioElement.currentTime = 0;
                 setCurrentSongInfo({...currentSongInfo, currentTime: 0, animationPercentage: 0});
                 return; 
