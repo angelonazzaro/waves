@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPlay, faPause, faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons';
+import {faPlay, faPause, faAngleLeft, faAngleRight, faVolumeLow, faVolumeXmark} from '@fortawesome/free-solid-svg-icons';
 
 
 function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongPlaying, setIsSongPlaying}) {    
@@ -27,7 +27,7 @@ function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongP
     }
 
     const dragHandler = (e) => {
-        audioRef.current.currentTime = e.target.value;
+        audioElement.currentTime = e.target.value;
         setCurrentSongInfo({...currentSongInfo, currentTime: e.target.value});
     }
 
@@ -51,6 +51,17 @@ function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongP
         await setSongs(newSongs);
     }
 
+    const volumeDragHandler = (e) => {
+        audioElement.volume = parseFloat(e.target.value); 
+
+        if (audioElement.volume === 0)
+            setIsSongMuted(true);
+        else
+            setIsSongMuted(false);
+
+        setCurrentSongInfo({...currentSongInfo, volume: audioElement.volume})
+    }
+
     // Format current song's current time and duration
     const formatTime = (time) => {
         return Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2); 
@@ -60,19 +71,26 @@ function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongP
     const [currentSongInfo, setCurrentSongInfo] = useState({
         currentTime: 0,
         duration: 0,
-        animationPercentage: 0
+        animationPercentage: 0,
+        volume: 1
     });
+
+    const [isSongMuted, setIsSongMuted] = useState(!currentSongInfo.volume > 0); 
 
     // Animations
     const trackAnim = {
-        transform: `translateX(${currentSongInfo.animationPercentage}%)`,
+        transform: `translateX(${currentSongInfo.animationPercentage}%)`
     };
+
+    const volumeAnim = {
+        transform: `translateX(${currentSongInfo.volume * 100}%)`
+    }
 
 	return (
 		<div className="player">
             <div className="time-control">
                 <p>{formatTime(currentSongInfo.currentTime)}</p>
-                <div className="track" style={{background: `linear-gradient(to right, ${currentSong.color[0]},${currentSong.color[1]})`}}>
+                <div className="track song-track" style={{background: `linear-gradient(to right, ${currentSong.color[0]},${currentSong.color[1]})`}}>
                     <input type="range" min={0} max={currentSongInfo.duration || 0} 
                         value={currentSongInfo.currentTime} onChange={dragHandler} />
                     <div style={trackAnim} className="animate-track"></div>
@@ -86,6 +104,14 @@ function Player({currentSong, audioRef, setCurrentSong, songs, setSongs, isSongP
                     icon={isSongPlaying ? faPause : faPlay} />
 			    <FontAwesomeIcon onClick={() => skipSong('forward')} className="skip-forward" 
                     size="2x" icon={faAngleRight} />
+            </div>
+            <div className="volume-control">
+                <FontAwesomeIcon icon={isSongMuted ? faVolumeXmark : faVolumeLow} size="2x" />
+                 <div className="track volume-track" style={{background: `linear-gradient(to right, ${currentSong.color[0]},${currentSong.color[1]})`}}>
+                    <input type="range" min={0} max={1} step={0.01} 
+                        value={currentSongInfo.volume || 1} onChange={volumeDragHandler} />
+                    <div style={volumeAnim} className="animate-track"></div>
+                </div>
             </div>
             <audio onLoadedMetadata={timeUpdateHandler} onTimeUpdate={timeUpdateHandler} 
                 onEnded={() => skipSong('forward')} ref={audioRef} src={currentSong.audio}></audio>
