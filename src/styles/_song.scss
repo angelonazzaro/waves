@@ -21,6 +21,19 @@
     }
 }
 
+@keyframes rotate-animation {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate-animation 20s linear forwards infinite;
+}
+
 @media screen and (max-width: 768px) {
     .song-container > img {
         width: 60%;
